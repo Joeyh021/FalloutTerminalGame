@@ -1,0 +1,11 @@
+This is a clone of the terminal hacking minigame from Fallout
+To play, use the arrow keys to move the cursor through the text 
+The aim is to guess the password using words hidden in the text 
+When a word is found it will be highlighted, press enter to select it 
+The game will show you how close the chosen word is to the password 
+Each word has a score based on how many letters are correct and in the right place 
+For example, if the password is 'nope' then 'rope' has a likeness of 3 and and 'tape' a likeness of 1 
+You have 3 attempts to guess the password, or the terminal locks 
+Enter 'hack' to play, or 'clear' to clear the screen 
+If the game freezes, press ctrl+c to force quit it 
+Thanks for playing! 
