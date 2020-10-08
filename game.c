@@ -4,7 +4,8 @@
 #include <time.h>
 #include <string.h>
 //written for 4 letter words only for now, *may& change in future
-//also written for a fixed terminal size of 
+//also written for a fixed terminal size of 80x24, this may change in future too
+
 
 struct coord{ //struct to represent coordinates of cursor on screen
     int y;
@@ -22,7 +23,7 @@ void generate_text(WINDOW *textwin){//generates the random text and adds it to s
     int n_lines = 30;
     int i,j;
     char l;
-    int hex_val = (rand() % ((16*16*16*16*16*16*16) - (16*16*16*16*16))) + (16*16*16*16*16); //generate the hex values, range used for aesthetics
+    int hex_val = (rand() % ((0x10000000) - (0x100000))) + (0x100000); //generate the hex values, range used for aesthetics
 
     for (i=1;i<n_lines;i+=2){
         mvwprintw(textwin,i,1,"%#010X  ",hex_val+i*4);
@@ -196,12 +197,12 @@ int main(int argc, char*argv[]){
     int max_rows,max_cols;
     getmaxyx(stdscr,max_rows,max_cols);
 
-    /*if ((max_rows < 80) || (max_cols < 24)){
+    if ((max_rows < 80) || (max_cols < 24)){
         mvprintw(0,0,"screen too small! your terminal is %dx%d. 80x24 min required \n", max_cols,max_rows);
         sleep(1);
         endwin();
         exit(1);
-    }*/
+    }
 
     refresh();
 
