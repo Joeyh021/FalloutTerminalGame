@@ -193,17 +193,18 @@ int main(int argc, char*argv[]){
     init_pair(2,COLOR_GREEN,COLOR_WHITE); //initialise stuff
     attron(COLOR_PAIR(1));
     srand(time(0));
-
+    
+    /*
     int max_rows,max_cols;
     getmaxyx(stdscr,max_rows,max_cols);
-
+    
     if ((max_rows < 80) || (max_cols < 24)){
         mvprintw(0,0,"screen too small! your terminal is %dx%d. 80x24 min required \n", max_cols,max_rows);
         sleep(1);
         endwin();
         exit(1);
     }
-
+    */
     refresh();
 
     header = newwin(11,82,0,0);
